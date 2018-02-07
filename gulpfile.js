@@ -15,7 +15,9 @@ gulp.task('server', ['serve', 'watch']);
 
 // Minify Custom JS: Run manually with: "gulp build-js"
 gulp.task('build-js', function () {
-    return gulp.src(['clientlibs/js/util.js',
+    return gulp.src(['clientlibs/vendor/highlight/highlight.pack.js',
+                     'clientlibs/js/util.js',
+                     'clientlibs/js/highlight-hook.js',
                      'clientlibs/components/image/polyfills.js',
                      'clientlibs/components/image/image.js',
                      'clientlibs/components/sharing/sharing.js',
@@ -54,7 +56,10 @@ gulp.task('build-css', function () {
 // Default task
 gulp.task('watch', function () {
     gulp.watch('clientlibs/**/*.js', ['build-js']);
-    gulp.watch('clientlibs/**/*.less', ['build-css']);
+    gulp.watch([
+        'clientlibs/**/*.less',
+        'clientlibs/**/*.css'
+    ], ['build-css']);
 });
 
 // Folder "/" serving at http://localhost:8888
