@@ -11,7 +11,7 @@ $(function() {
         codeEl.text(rawHtml);
         targetEl.append("<hr>");
         targetEl.append("<h3>HTML component code</h3>");
-        targetEl.append("<p><em>Only CSS classes with the `cmp-` prefix are Public APIs of the component. All other elements are subject to change in future releases.</em></p>")
+        targetEl.append("<p><em>Only CSS classes with the `cmp-` prefix are Public APIs of the component.</em></p>")
         targetEl.append(preEl.append(codeEl));
     });
 
